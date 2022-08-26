@@ -64,7 +64,7 @@ class MatrixGestureDetector extends StatefulWidget {
     
     
   /// R@hul: Forked: Callback on drag start
-  final VoidCallback onDragStarted;
+  final VoidCallback onDragStart;
     
   /// R@hul: Forked: Callback on drag end
   final VoidCallback onDragEnd;
@@ -79,7 +79,7 @@ class MatrixGestureDetector extends StatefulWidget {
     this.clipChild = true,
     this.focalPointAlignment,
     this.behavior = HitTestBehavior.deferToChild,
-    this.onDragStarted, 
+    this.onDragStart, 
     this.onDragEnd, 
   })  : super(key: key);
 
@@ -149,7 +149,7 @@ class _MatrixGestureDetectorState extends State<MatrixGestureDetector> {
   );
 
   void onScaleStart(ScaleStartDetails details) {
-    widget.onDragStarted();  
+    widget.onDragStart();  
       
     translationUpdater.value = details.focalPoint;
     scaleUpdater.value = 1.0;
